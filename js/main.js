@@ -2,11 +2,11 @@ const app = Vue.createApp({
     data() {
         return {
             items:[],
-            selectedItem:null,
+            selectedItem: null,
             loading: false,
-            error:null
+            error: null
         }
-    };
+    },
 created() {
         this.getItems();
     },
@@ -15,23 +15,24 @@ created() {
     this.loading = true;
      this.error = null;
 
-      fetch("https)
+      fetch("https://jsonplaceholder.typicode.com/posts")
       .then(response => response.json())
        .then(data => {
-         this.items = data;
+         this.item = data;
         this.loading = false;
        })
-. catch(erorr=>{
-    this.erorr = "Failed to load data";
-    this .loading =false;
+.catch(error=> {
+    this.error = "Failed to load data";
+    this.loading = false;
 });
 },
- getdetails(id){
+ getDetails(id){
     this.loading=true
-    this.erorr = null;
-    fetch(https:${id})
+    this.error = null;
+
+  fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
     .then(response => response.json())
-    .then(data =>){
+    .then(data => {
         this.selectedItem = data;
         this.loading =false;
     });
