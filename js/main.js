@@ -6,7 +6,7 @@ const app = Vue.createApp({
             loading: false,
             error:null
         }
-    }
+    };
 created() {
         this.getItems();
     },
@@ -20,7 +20,18 @@ created() {
        .then(data => {
          this.items = data;
         this.loading = false;
-
-})
+       })
+. catch(erorr=>{
+    this.erorr = "Failed to load data";
+    this .loading =false;
 });
+},
+ getdetails(id){
+    this.loading=true
+    this.erorr = null;
+    
+ }
+
+
+
 app.mount("#app");
