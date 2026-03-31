@@ -2,15 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue AJAX Assignment</title>
-    <script src="></script>
+
+    <script src="https"></script>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <div id="app">
-    <h1>Items</h1>
+
+    <h1>Items List</h1>
+
+
+    <p v-if="loading">Loading data...</p>
+    <p v-if="error">{{ error }}</p>
+
+    <ul>
+        <li 
+            v-for="item in items" 
+            :key="item.id" 
+            @click="getDetails(item.id)"
+            {{ item.title }}
+    </li>
+    </ul>
+
+    <div v-if="selectedItem" class="details">
+        <h2>{{ selectedItem.title }}</h2>
+        <p>{{ selectedItem.body }}</p>
+    </div>
+
 </div>
 
-<script src="js"></script>
+//JS connection is overe here 
+<script src="js/main.js"></script>
+
 </body>
 </html>
