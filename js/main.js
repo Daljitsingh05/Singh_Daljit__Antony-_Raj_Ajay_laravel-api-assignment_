@@ -17,7 +17,7 @@ const app = Vue.createApp({
       this.loading = true;
      this.error = null;
 
- fetch("http://localhost:8000/api/video-games")
+ fetch("https://jsonplaceholder.typicode.com/posts")
    .then(response => response.json())
       .then(data => {
              this.items = data.data ? data.data : data;
@@ -33,7 +33,7 @@ getDetails(id) {
   this.loading = true;
      this.error = null;
 
- fetch(`http://localhost:8000/api/video-games/${id}`)
+fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
    .then(response => response.json())
         .then(data => {
         this.selectedItem = data;
