@@ -14,13 +14,13 @@ created() {
    getItems() {
     this.loading = true;
      this.error = null;
-
-      fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("http://localhost:8000/api/video-games")
       .then(response => response.json())
        .then(data => {
-         this.item = data;
+        this.items = data.data ? data.data : data;
         this.loading = false;
        })
+
 .catch(error=> {
     this.error = "Failed to load data";
     this.loading = false;
@@ -30,12 +30,17 @@ created() {
     this.loading=true
     this.error = null;
 
-  fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+fetch(`http://localhost:8000/api/video-games/${id}`)
     .then(response => response.json())
     .then(data => {
         this.selectedItem = data;
-        this.loading =false;
+        this.loading = false;
+    })
+    .catch(error => {
+        this.error = "Failed to load details";
+        this.loading = false;
     });
+}
     }
  }
 
