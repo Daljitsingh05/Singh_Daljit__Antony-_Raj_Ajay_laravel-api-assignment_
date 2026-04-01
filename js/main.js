@@ -20,7 +20,7 @@ const app = Vue.createApp({
  fetch("https://jsonplaceholder.typicode.com/posts")
    .then(response => response.json())
       .then(data => {
-             this.items = data.data ? data.data : data;
+         this.items = data;
             this.loading = false;
                 })
 
