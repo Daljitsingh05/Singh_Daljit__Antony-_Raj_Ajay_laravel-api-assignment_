@@ -4,7 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue AJAX Assignment</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+<body>
+
+<div id="app">
+
+<h1>Video Games</h1>
+
+<p v-if="loading">Loading data...</p>
+<p v-if="error">{{ error }}</p>
+
+<ul>
+  <li 
+    v-for="item in items" 
+    :key="item.id"
+    v-on:click="getDetails(item.id)"
+    style="cursor: pointer; border:1px solid #ccc; margin:5px; padding:10px;"
+  >
+    {{ item.title }}
+  </li>
+</ul>
+
+<button v-on:click="getDetails(1)">TEST CLICK</button>
+
+<div v-if="selectedItem" class="details">
+  <h2>{{ selectedItem.title }}</h2>
+  <p>{{ selectedItem.description }}</p>
+</div>
+
+</div>
+
+<!-- Vue -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.min.js"></script>
+
+<!-- JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
 </head>
 <body>
 
