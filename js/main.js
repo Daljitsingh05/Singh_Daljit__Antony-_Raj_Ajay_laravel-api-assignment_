@@ -46,7 +46,12 @@ this.loading = false;
   }
     }
 });
+<<<<<<< Updated upstream
 getDetails(id) {
     console.log("CLICK WORKING", id);
 }
+=======
+
+
+>>>>>>> Stashed changes
 app.mount("#app");
