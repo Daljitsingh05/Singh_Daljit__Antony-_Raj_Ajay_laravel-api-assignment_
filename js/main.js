@@ -47,6 +47,6 @@ this.loading = false;
     }
 });
 getDetails(id) {
-    console.log("clicked", id);  
-
+    console.log("CLICK WORKING", id);
+}
 app.mount("#app");
