@@ -17,10 +17,15 @@ const app = Vue.createApp({
       this.loading = true;
      this.error = null;
 
- fetch("https://jsonplaceholder.typicode.com/posts")
-   .then(response => response.json())
+fetch("http://localhost:8000/api/video-games")
+   .then(response => {
+       if (!response.ok) {
+           throw new Error("Network error");
+       }
+       return response.json();
+   })
       .then(data => {
-         this.items = data;
+        this.items = data.data;
             this.loading = false;
                 })
 
@@ -33,10 +38,15 @@ getDetails(id) {
   this.loading = true;
      this.error = null;
 
-fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-   .then(response => response.json())
+fetch(`http://localhost:8000/api/video-games/${id}`)
+   .then(response => {
+       if (!response.ok) {
+           throw new Error("Network error");
+       }
+       return response.json();
+   })
         .then(data => {
-        this.selectedItem = data;
+       this.selectedItem = data.data;
                     this.loading = false;
 })
 .catch(error => {
