@@ -13,7 +13,7 @@
 
 <div id="app">
 
-  <h1>{{ 5 + 5 }}</h1>
+<h1>Video Games</h1>
 
 
     <p v-if="loading">Loading data...</p>
@@ -25,24 +25,26 @@
     :key="item.id" 
     @click="getDetails(item.id)"
 >
-    {{ item.title }}
+  {{ item.title }} ({{ item.platform }})
 </li>
     </ul>
 
-    <div v-if="selectedItem" class="details">
-  <h2>{{ selectedItem.title }}</h2>
-        <p>{{ selectedItem.body }}</p>
-    </div>
+  <div v-if="selectedItem" class="details">
+   <h2>{{ selectedItem.title }}</h2>
+   <p>{{ selectedItem.description }}</p>
+   <p><strong>Platform:</strong> {{ selectedItem.platform }}</p>
+    <p><strong>Rating:</strong> {{ selectedItem.rating }}</p>
 
+  <p v-if="selectedItem.genre">
+    <strong>Genre:</strong> {{ selectedItem.genre.name }}
+  </p>
+</div>
 </div>
 
-<<<<<<< Updated upstream
-//JS connection is overe here 
-<script src="js/"></script>
-=======
-<!-- JS connection is over here -->
+
+<!-- JS connection  -->
+
 <script src="js/main.js"></script>
->>>>>>> Stashed changes
 
 </body>
 </html>
