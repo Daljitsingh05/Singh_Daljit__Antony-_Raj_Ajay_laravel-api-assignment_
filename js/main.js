@@ -46,5 +46,7 @@ this.loading = false;
   }
     }
 });
+getDetails(id) {
+    console.log("clicked", id);  
 
 app.mount("#app");
