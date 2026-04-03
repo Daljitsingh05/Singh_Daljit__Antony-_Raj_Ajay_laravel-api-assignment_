@@ -66,4 +66,21 @@ transform: scale(1.2);
 .menu.active {
 display: dlock;
 }
+/* Thsi is my her section */
+ .hero {
+   background: linear-gradient(135deg, #222, #555);
+    color: white;
+      text-align: center;
+       padding: 50px 0;
+}
+
+. hero h2 {
+     margin-bottom: 10px;
+      font-size: 28px;
+}
+
+   .hero p {
+      opacity: 0.8;
+}
+
 
