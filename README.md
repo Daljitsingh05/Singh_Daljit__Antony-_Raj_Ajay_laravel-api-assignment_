@@ -157,3 +157,45 @@ http://127.0.0.1:8000/api/video-games/{id}
 ---
 
 
+## 🎨 UI Enhancements & Additional Features
+
+To improve the user experience and interface, the following enhancements were implemented:
+
+### ✨ GSAP Animations
+
+* Integrated GSAP (GreenSock Animation Platform)
+* Added smooth fade and slide animation for game cards on load
+* Animation triggers dynamically after data is rendered using Vue lifecycle
+
+### 🍔 Responsive Burger Menu
+
+* Implemented a mobile-friendly navigation menu
+* Toggle functionality using JavaScript (`classList.toggle`)
+* Styled with CSS for smooth interaction
+
+### 🎯 UI Improvements
+
+* Added modern card-based layout for game listing
+* Implemented grid system for responsive design
+* Added hover effects and shadows for better visual feedback
+* Improved hero section with gradient background
+* Clean and minimal design following best practices
+
+---
+
+## 🧠 Development Approach
+
+* Followed modular structure separating frontend and backend
+* Used Vue lifecycle methods (`created`, `mounted`, `watch`)
+* Implemented fallback testing using dummy data during development
+* Ensured clean and readable code structure
+
+---
+
+## 📌 Notes
+
+* Frontend can be tested independently using dummy data if backend is not running
+* Full functionality requires Laravel API to be active
+* Project follows assignment guidelines strictly (no `.vue` files used)
+
+---
