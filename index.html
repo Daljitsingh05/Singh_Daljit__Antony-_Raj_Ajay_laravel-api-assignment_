@@ -2,46 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue AJAX Assignment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone</title>
 
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
 
 <div id="app">
 
-    <h1>Video Games</h1>
-     <p v-if="loading">Loading data...</p>
-      <p v-if="error">{{ error }}</p>
+    <!--This is my header section strats from here  -->
+    <header class="header">
+        <div class="container">
+            <h1>GameZone </h1>
+        </div>
+    </header>
 
-    <ul>
-        <li 
-            v-for="item in items" 
-               :key="item.id"
-                 v-on:click="getDetails(item.id)"
-                   style="cursor: pointer; border:1px solid #ccc; margin:5px; padding:10px;"
-        >
-            {{ item.title }}
-        </li>
-    </ul>
+    <!-- This is my hero section strats from here  -->
+    <section class="hero">
+        <div class="container">
+         <h2>Discover the Best Video Games</h2>
+            <p>Action | Racing | Adventure</p>
+        </div>
+    </section>
 
-    <div v-if="selectedItem" class="details">
+    <!-- This is my  game section strats from here -->
+    <section class="games container">
+
+        <p v-if="loading">Loading data...</p>
+        <p v-if="error">{{ error }}</p>
+
+        <div class="game-grid">
+            <div 
+                class="game-card"
+                v-for="item in items" 
+                :key="item.id"
+                v-on:click="getDetails(item.id)">
+            >
+                <h3>{{ item.title }}</h3>
+            </div>
+        </div>
+
+    </section>
+
+    <section v-if="selectedItem" class="details container">
         <h2>{{ selectedItem.title }}</h2>
         <p>{{ selectedItem.description }}</p>
-        <p><strong>Platform:</strong> {{ selectedItem.platform }}</p>
-        <p><strong>Rating:</strong> {{ selectedItem.rating }}</p>
+         <p><strong>Platform:</strong> {{ selectedItem.platform }}</p>
+ <p><strong>Rating:</strong> {{ selectedItem.rating }}</p>
         <p v-if="selectedItem.genre">
             <strong>Genre:</strong> {{ selectedItem.genre.name }}
         </p>
-    </div>
+    </section>
 
 </div>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.min.js"></script>
-
 <script src="./js/main.js"></script>
 
 </body>
