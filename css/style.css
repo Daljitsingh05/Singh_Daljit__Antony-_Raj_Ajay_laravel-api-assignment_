@@ -1,78 +1,69 @@
 body {
-    font-family: Arial, sans-serif;
-      margin: 0;
-        background: #f4f4f4;
+font-family: Arial, sans-serif;
+ margin: 0;
+    background: #f4f4f4;
 }
 
-h1 {
-    text-align: center;
-       padding: 20px;
-}
-
+/* This is container part  */
 .container {
-     display: flex;
-    gap: 20px;
-    padding: 20px;
+   width: 90;
+     margin: auto;
 }
 
-.list {
-    flex: 1;
-     background: white;
-       padding: 15px;
-       border-radius: 8px;
+/*  This is my Header part */
+.header {
+   background: linear-gradient(90deg, #111, #444);
+    color: white;
+       padding: 15px 0;
 }
 
-ul {
-    padding: 0;
+.header h1 {
+    margin: 0;
+font-size: 24px;
+     text-align: center;
 }
 
-li {
- list-style: none;
-  padding: 10px;
- border-bottom: 1px solid #ddd;
-cursor: pointer;
-}
-
-li:hover {
- background: #eee;
-}
-
-.details {
-    flex: 1;
-  background: white;
-      padding: 15px;
-        border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-}
-
-.game-item {
-    transition: 0.2s;
-}
-
-.game-item:hover {
-    transform: scale(1.03);
-}
-
-.menu {
-  display: none;
-    background: #222;
-color: white;
-  padding: 10px;
-}
-
-  .menu.active {
-    display: block;
-}
-
+/*  and this is my Burger */
 .burger {
-  font-size: 22px;
-   cursor: pointer;
-     background: none;
-   border: none;
-  color: white;
+position: absolutee;
+        right: 20px;
+      top: 15px;
+   font-size: 24px;
+    cursor: pointer;
+     border: none;
+      background: none;
+        color: white;
+        transition: 0.3s;
 }
+
+.burger:hover {
+transform: scale(1.2);
+}
+
+/*  this is Menu part */
+.menu {
+   display: none;
+    background: #222;
+    color: white;
+      padding: 15px;
+       text-align: center;
+}
+
+     .menu ul {
+       padding: o;
+}
+
+   .menu ul li {
+      list-style: none;
+         padding: 10px;
+         transition: 0.3s;
+}
+
+   .menu ul li:hover {
+     background: #444;
+}
+
+.menu.active {
+display: dlock;
+}
+
