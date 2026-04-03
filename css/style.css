@@ -6,7 +6,7 @@ font-family: Arial, sans-serif;
 
 /* This is container part  */
 .container {
-   width: 90;
+   width: 90%;
      margin: auto;
 }
 
@@ -25,7 +25,7 @@ font-size: 24px;
 
 /*  and this is my Burger */
 .burger {
-position: absolutee;
+position: absolute;
         right: 20px;
       top: 15px;
    font-size: 24px;
@@ -50,7 +50,7 @@ transform: scale(1.2);
 }
 
      .menu ul {
-       padding: o;
+       padding: 0;
 }
 
    .menu ul li {
@@ -64,7 +64,7 @@ transform: scale(1.2);
 }
 
 .menu.active {
-display: dlock;
+display: block;
 }
 /* Thsi is my her section */
  .hero {
@@ -74,7 +74,7 @@ display: dlock;
        padding: 50px 0;
 }
 
-. hero h2 {
+.hero h2 {
      margin-bottom: 10px;
       font-size: 28px;
 }
@@ -92,7 +92,7 @@ display: dlock;
 }
 
            /*  my game card section */
-  game-card {
+  .game-card {
      background: white;
       padding: 20px;
        border-radius: 10px;
@@ -101,7 +101,7 @@ display: dlock;
           transition: all 0.3s ease;
 }
 
-     .game-card {
+     .game-card :hover{
         transform: translateY(-5px) scale(1.03);
 box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
