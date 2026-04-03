@@ -57,3 +57,22 @@ li:hover {
 .game-item:hover {
     transform: scale(1.03);
 }
+
+.menu {
+  display: none;
+    background: #222;
+color: white;
+  padding: 10px;
+}
+
+  .menu.active {
+    display: block;
+}
+
+.burger {
+  font-size: 22px;
+   cursor: pointer;
+     background: none;
+   border: none;
+  color: white;
+}
