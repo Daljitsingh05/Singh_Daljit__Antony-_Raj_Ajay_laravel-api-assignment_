@@ -1,12 +1,3 @@
-
-const saveToStorage = (data) => {
-  localStorage.setItem("games", JSON.stringify(data));
-};
-
-const getFromStorage = () => {
-    return JSON.parse(localStorage.getItem("games")) || [];
-};
-
 const app = Vue.createApp({
     data() {
      return {
@@ -17,16 +8,9 @@ const app = Vue.createApp({
         }
     },
 
-   created() {
-     const stored = getFromStorage();
-
-    if (stored.length > 0) {
-         this.items = stored;
-
-    } else {
-          this.getItems();
-    }
-}
+    created() {
+        this.getItems();
+    },
 
     methods: {
         getItems() {
@@ -41,10 +25,10 @@ fetch("http://localhost:8000/api/video-games")
        return response.json();
    })
       .then(data => {
-    this.items = data.data;
-    saveToStorage(data.data); 
-    this.loading = false;
-})
+        this.items = data.data;
+            this.loading = false;
+                })
+
     .catch(error => {
       this.error = "Failed to load data";
          this.loading = false;
