@@ -13,7 +13,7 @@ const app = Vue.createApp({
     },
        mounted() {
       setTimeout(() => {
-          gsap.from(".game-item", {
+          gsap.from(".game-card", {
           opacity: 0,
              y: 20,
           duration: 0.5,
@@ -21,6 +21,18 @@ const app = Vue.createApp({
         });
       }, 300);
     },
+    watch: {
+    items() {
+      this.$nextTick(() => {
+        gsap.from(".game-card", {
+          opacity: 0,
+          y: 20,
+          duration: 0.5,
+          stagger: 0.2
+        });
+      });
+    }
+  },
 
     methods: {
         getItems() {
@@ -68,3 +80,12 @@ this.loading = false;
 });
 
 app.mount("#app");
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.querySelector(".burger");
+    const menu = document.querySelector(".menu");
+
+  burger.addEventListener("click", () => {
+        menu.classList.toggle("active");
+  });
+});
+
